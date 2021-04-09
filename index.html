@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+        <a href="secondtable.html">Segunda parte de los ejercicios</a>
+        <style>
+            .item1{background:LightSkyBlue;}
+            .item2{
+                background:LightSalmon;
+                justify-self: center;
+}
+            .item3{
+                background:PaleTurquoise;
+                align-self: end;
+}
+            .item4{background:LightPink;}
+
+            .item5 {
+            background: PaleGreen;
+            grid-column: 2/4;
+            grid-area: footer;
+            grid-area: 3/1/4/4;
+
+
+
+  }
+
+          
+            .container {
+              display: grid;
+              justify-items:center;
+              align-items: end;
+              grid-template-areas:
+              "header header header"
+               ". content content"
+               "footer footer footer";
+              grid-template-columns:  repeat(auto-fill,minmax(60px,1fr));
+              grid-gap: 10px 20px;
+              grid-template-rows: 50px 50px;
+              font-size: 40px;
+              width: 100%;
+              background: LightGray;
+            }
+          </style>
+          
+          <div class="container">
+            <div class="item1">1</div>
+            <div class="item2">2</div>
+            <div class="item3">3</div>
+            <div class="item4">4</div>
+            <div class="item5">5</div>
+          </div>
+    </body>
+</html>
