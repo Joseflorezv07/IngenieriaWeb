@@ -16,7 +16,7 @@ body {
 header {
     width: 1440px;
     height: 500px;
-    background: linear-gradient(-90deg, rgba(255, 82, 92, 1) 50%, rgba(255, 133, 110, 1) 100%);
+    background: linear-gradient( hsl(353, 100%, 62%), hsl(13, 100%, 72%));
     background-image: url(./imagenes/bg-pattern-intro.svg);
     background-repeat: no-repeat;
     background-size: 2014px 2018px;
@@ -39,38 +39,6 @@ header {
     color: hsl(0, 0%, 100%);
 }
 
-#button {
-    font-family: 'Overpass';
-    size: 20%;
-    font-size: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-items: flex-end;
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
-    border-style: hidden;
-    height: 40px;
-    width: 150px;
-    color: hsl(0, 0%, 100%);
-}
-
-#button2 {
-    font-family: 'Overpass';
-    font-size: 16px;
-    size: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border-radius: 20px;
-    border-color: white;
-    height: 40px;
-    width: 150px;
-    background-color: transparent;
-}
 
 .contenedor2 {
     height: 800px;
@@ -134,4 +102,68 @@ header {
     margin-top: 10%;
     margin-right: 9%;
     color: hsl(0, 0%, 100%);
+}
+.contenedor4
+{
+    height: 800px;
+    width: 1444px;
+    color: white;
+    display: flex;
+    background-image: url(./imagenes/illustration-laptop-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: -280px;
+
+}
+.Title3
+{
+ display: flex;
+ flex-direction: column;
+ font-family: 'Overpass';
+ font-size: 16px;
+ color:  hsl(237, 23%, 32%);
+ margin-left: 50%;
+ margin-top: 10%;
+ margin-right: 20%;
+}
+
+footer
+{
+    height: 400px;
+    width: 1444px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Overpass';
+    font-size: 16px;
+    background-color: hsl(240, 10%, 16%);
+    border-top-right-radius: 60px;
+    color:white;
+
+}
+
+footer h1{
+   margin-left: 10%;
+}
+
+.Product
+{
+display: flex;
+flex-direction: column;
+margin-left: 25%;
+margin-top: -2%;
+}
+
+.Company
+{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50%;
+    margin-top: -8%;
+
+}
+.Connect{
+    display: flex;
+    flex-direction: column;
+    margin-left: 75%;
+    margin-top: -7%;
+
 }
