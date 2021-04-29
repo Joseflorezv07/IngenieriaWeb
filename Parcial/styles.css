@@ -16,11 +16,8 @@ body {
 header {
     width: 1440px;
     height: 500px;
-    background: linear-gradient( hsl(353, 100%, 62%), hsl(13, 100%, 72%));
-    background-image: url(./imagenes/bg-pattern-intro.svg);
-    background-repeat: no-repeat;
+    background: linear-gradient(-90deg, rgba(255, 82, 92, 1) 50%, rgba(255, 133, 110, 1) 100%);
     background-size: 2014px 2018px;
-    background-position: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,17 +25,25 @@ header {
     background-attachment: fixed;
 }
 
+.imagen {
+    width: 1440px;
+    height: 500px;
+    background-image: url(./imagenes/bg-pattern-intro.svg);
+    background-repeat: no-repeat;
+    background-size: 2014px 2018px;
+    background-position: 100px;
+    background-attachment: fixed;
+}
+
 .Title {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    align-self: center;
+    flex-direction: row;
     margin-top: 5%;
     font-family: 'Overpass';
     font-size: 20px;
     color: hsl(0, 0%, 100%);
 }
-
 
 .contenedor2 {
     height: 800px;
@@ -103,8 +108,8 @@ header {
     margin-right: 9%;
     color: hsl(0, 0%, 100%);
 }
-.contenedor4
-{
+
+.contenedor4 {
     height: 800px;
     width: 1444px;
     color: white;
@@ -112,22 +117,20 @@ header {
     background-image: url(./imagenes/illustration-laptop-desktop.svg);
     background-repeat: no-repeat;
     background-position: -280px;
-
-}
-.Title3
-{
- display: flex;
- flex-direction: column;
- font-family: 'Overpass';
- font-size: 16px;
- color:  hsl(237, 23%, 32%);
- margin-left: 50%;
- margin-top: 10%;
- margin-right: 20%;
 }
 
-footer
-{
+.Title3 {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Overpass';
+    font-size: 16px;
+    color: hsl(237, 23%, 32%);
+    margin-left: 50%;
+    margin-top: 10%;
+    margin-right: 20%;
+}
+
+footer {
     height: 400px;
     width: 1444px;
     display: flex;
@@ -136,34 +139,30 @@ footer
     font-size: 16px;
     background-color: hsl(240, 10%, 16%);
     border-top-right-radius: 60px;
-    color:white;
-
+    color: white;
 }
 
-footer h1{
-   margin-left: 10%;
+footer h1 {
+    margin-left: 10%;
 }
 
-.Product
-{
-display: flex;
-flex-direction: column;
-margin-left: 25%;
-margin-top: -2%;
+.Product {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25%;
+    margin-top: -2%;
 }
 
-.Company
-{
+.Company {
     display: flex;
     flex-direction: column;
     margin-left: 50%;
     margin-top: -8%;
-
 }
-.Connect{
+
+.Connect {
     display: flex;
     flex-direction: column;
     margin-left: 75%;
     margin-top: -7%;
-
 }
