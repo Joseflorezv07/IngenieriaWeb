@@ -1,128 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>three.js webgl - FBX loader</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <script>
-            import * as THREE from '../build/three.module.js';
-            import Stats from './jsm/libs/stats.module.js';
-            import { OrbitControls } from './jsm/controls/OrbitControls.js';
-            import { FBXLoader } from './jsm/loaders/FBXLoader.js';
-         </script>
-    </head>
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f926cbc8cd.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
 
-        <script>
+<body>
 
-            if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+    <header>
+        <nav class="nav">
+            <h1><a href="#" class="logo">Blogr</a></h1>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item nav-link">
+                    <a href="#" class="nav-menu-link nav-link"></a>
+                    Product</li>
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link"></a>
+                    Company</li>
+                <li class="nav-menu-item">
+                    <a href="#" class="nav-menu-link nav-link"></a>
+                    Connect</li>
+            </ul>
+        </nav>
+        <div class="imagen">
 
-            var container, stats, controls;
-            var camera, scene, renderer, light;
+            <div class="Title">
+                <h1>A modern publishing platform</h1>
+            </div>
+            <div class="Title">
+                <h5>Grow your audience and build your online brand</h5>
+            </div>
+        </div>
+    </header>
+    <div class="contenedor2">
+        <h1>Designed for the future</h1>
 
-            var clock = new THREE.Clock();
+        <div id="div1">
+            <h3>Introducing an extensible aditor</h4><br>
 
-            var mixers = [];
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto neque corporis praesentium eius autem et voluptates repellendus nihil distinctio, molestiae dolor dicta accusantium impedit, enim consequatur exercitationem. Quis, debitis
+                    eveniet.
+                </p>
+        </div>
+        <div>
+            <h3>Robust content management</h4><br>
 
-            init();
-            animate();
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure esse aliquam eius dolorum inventore facere aliquid modi magni iusto ipsa sed totam necessitatibus quasi nisi architecto, repellat impedit placeat.</p>
+        </div>
+    </div>
+    <div class="contenedor3">
+        <div class="imagen2">
+        </div>
+        <div class=Title2>
+            <h1>State of the Art Infraestructure</h1><br>
 
-            function init() {
+            <p>With reliability and speed in mind,worldwide data centers provide the backbone for ultra fast connectivity. This ensures your site will load instantly. no matter where you readers are,keeping your site competitive.
+                <p>
+        </div>
+    </div>
+    <div class="contenedor4">
+        <div class="imagenf">
 
-                container = document.createElement( 'div' );
-                document.body.appendChild( container );
+        </div>
+        <div class="Title3">
+            <h1 style="color: hsl(237, 23%, 32%);">Free,open,simple</h1><br>
+            <p style="color: hsl(237, 23%, 32%);">Blogr is a free and open source application backed by a large community of helpful developers. It supports features such as code syntax highlighting, RSS fees, social media integration, third-party commenting tools,and works seamlessly with
+                Google Analytics. The architecture is clean and is relatively easy to learn.</p><br>
+            <h1 style="color: hsl(237, 23%, 32%);">Powerful tooling</h1><br>
+            <p style="color: hsl(237, 23%, 32%);">Batteries included.We built a simple and straightforward CLI tool that makes customization and deployment a breeze. but capable of producing even the most complicated sites.</p>
+        </div><br>
+    </div>
+    <footer>
+        <h1 style="font-family: 'Ubuntu', sans-serif;">Blogr</h1>
+        <div class="Product">
+            <a>Product</a>
+            <a>Overview</a>
+            <a>Pricing</a>
+            <a>MarketPlace</a>
+            <a>Features</a>
+            <a>Integrations</a>
+        </div>
+        <div class="Company">
+            <a>Company</a>
+            <a>About</a>
+            <a>Team</a>
+            <a>Blog</a>
+            <a>Careers</a>
+        </div>
+        <div class="Connect">
+            <a>Contact</a>
+            <a>Newsletter</a>
+            <a>LinkedIn</a>
+    </footer>
 
-                camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-                camera.position.set( 100, 200, 300 );
+</body>
 
-                controls = new THREE.OrbitControls( camera );
-                controls.target.set( 0, 100, 0 );
-                controls.update();
-
-                scene = new THREE.Scene();
-                scene.background = new THREE.Color( 0xa0a0a0 );
-                scene.fog = new THREE.Fog( 0xa0a0a0, 200, 1000 );
-
-                light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
-                light.position.set( 0, 200, 0 );
-                scene.add( light );
-
-                light = new THREE.DirectionalLight( 0xffffff );
-                light.position.set( 0, 200, 100 );
-                light.castShadow = true;
-                light.shadow.camera.top = 180;
-                light.shadow.camera.bottom = -100;
-                light.shadow.camera.left = -120;
-                light.shadow.camera.right = 120;
-                scene.add( light );
-
-                var loader = new THREE.FBXLoader();
-                loader.load( 'models/personaje.fbx', function ( object ) {
-
-                    object.mixer = new THREE.AnimationMixer( object );
-                    mixers.push( object.mixer );
-
-                    var action = object.mixer.clipAction( object.animations[ 0 ] );
-                    action.play();
-
-                    object.traverse( function ( child ) {
-
-                        if ( child.isMesh ) {
-
-                            child.castShadow = true;
-                            child.receiveShadow = true;
-
-                        }
-
-                    } );
-
-                    scene.add( object );
-
-                } );
-
-                renderer = new THREE.WebGLRenderer();
-                renderer.setPixelRatio( window.devicePixelRatio );
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                renderer.shadowMap.enabled = true;
-                container.appendChild( renderer.domElement );
-
-                window.addEventListener( 'resize', onWindowResize, false );
-
-                
-            }
-
-            function onWindowResize() {
-
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-
-                renderer.setSize( window.innerWidth, window.innerHeight );
-
-            }
-
-
-            function animate() {
-
-                requestAnimationFrame( animate );
-
-                if ( mixers.length > 0 ) {
-
-                    for ( var i = 0; i < mixers.length; i ++ ) {
-
-                        mixers[ i ].update( clock.getDelta() );
-
-                    }
-
-                }
-
-                renderer.render( scene, camera );
-
-                stats.update();
-
-            }
-
-        </script>
-
-    </body>
 </html>
